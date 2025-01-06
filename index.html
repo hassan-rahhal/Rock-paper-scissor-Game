@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+</head>
+<body>
+    <h1>Welcome to our game</h1>
+    <h2>Choose one button:</h2>
+    <button onclick="start('Rock')">Rock</button>
+    <button onclick="start('Scissor')">Scissor</button>
+    <button onclick="start('Paper')">Paper</button>
+    <br><br>
+    <button onclick="final()">Check results</button>
+    <br><br>
+    <div>
+        <p>You choosed:<span id="user-choice">None</span></p>
+        <p>Ai choosed:<span id="ai-choice">None</span></p>
+    </div>
+</body>
+<script>
+    let userchoice;
+    let aioption;
+    function random(){
+        const randomaray=["Rock","Scissor","Paper"];
+        const randomindex=Math.floor(Math.random()*3);
+        return randomaray[randomindex];
+    }
+    function start(choice){
+        userchoice=choice;
+        aioption=random();
+        document.getElementById("user-choice").innerHTML=userchoice;
+        document.getElementById("ai-choice").innerHTML=aioption;
+    }
+    function result(userchoice,aioption){
+        if(userchoice=='Rock' && aioption=='Rock')
+        return "Draw";
+        else  if(userchoice=='Rock' && aioption=='Paper')
+        return "Ai wins";
+        else if(userchoice=='Rock' && aioption=='Scissor')
+        return "You win";
+        else if(userchoice=='Paper' && aioption=='Rock')
+        return "You win";
+        else  if(userchoice=='Paper' && aioption=='Paper')
+        return "Draw";
+        else if(userchoice=='Paper' && aioption=='Scissor')
+        return "Ai wins";
+        else if(userchoice=='Scissor' && aioption=='Rock')
+        return "Ai wins";
+        else  if(userchoice=='Scissor' && aioption=='Paper')
+        return "You win";
+        else if(userchoice=='Scissor' && aioption=='Scissor')
+        return "Draw";
+    }
+    function final(){
+         alert(result(userchoice,aioption));
+    }
+</script>
+</html>
