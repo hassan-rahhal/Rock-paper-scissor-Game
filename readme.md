@@ -1,7 +1,7 @@
-Rock Paper Scissors Game
+Rock Paper Scissors Game:
 This project is a digital version of the classic Rock Paper Scissors game, where users can compete against an AI opponent.
 
-Interactive Gameplay: Users select one of three options—rock, paper, or scissors.
+Interactive Gameplay: Users select one of three options: rock, paper, or scissors.
 
 AI Integration: The AI opponent randomly chooses one of the three options.
 
